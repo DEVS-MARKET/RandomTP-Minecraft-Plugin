@@ -14,6 +14,7 @@ This plugin was coded for the paper 1.20+ engine but should also work with other
 
 Reload Config Command (Permissions to use: rtp.admin)
 - /rtp reload
+
 Show Rtp Gui Command (Permissions to use: rtp.default)
 - /rtp gui
 - /rtp
