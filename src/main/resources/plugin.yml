@@ -1,0 +1,12 @@
+name: RandomTP
+version: '${project.version}'
+main: uk.whitedev.rtp.RandomTP
+api-version: 1.20
+authors: [ 0WhiteDev ]
+description: Plugin for Random Teleport Players
+website: https://devs.market
+commands:
+  rtp:
+    description: RandomTP Main Command
+    permission: rtp.default
+

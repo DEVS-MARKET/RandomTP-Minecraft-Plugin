@@ -1,0 +1,103 @@
+############################
+#        DEVS.MARKET       #
+#   RandomTP Free Plugin   #
+############################
+
+# Message Settings
+# Placeholders:
+# %x% - Player's X position after teleportation (only for player-teleported-message)
+# %z% - Player's Z position after teleportation (only for player-teleported-message)
+#
+# To get gradient/colored text use the formatting provided by MiniMessages (It is not possible to use legacy format here)
+#
+# Documentation: https://docs.advntr.dev/minimessage/format.html
+# The reason for using multiple formatting is the lack of MiniMessages support for bossbars/items/gui,
+# the basic config contains examples of using MiniMessages, follow this if you don't understand the documentation
+#
+# The text that admin will see after plugin reload
+reload-message: "<#636363>[<gradient:#FB0000:#FD3F3F><b>RTP</b></gradient><#636363>] <#9B9B9B>Plugin got reloaded <#45FF00>successful<#9B9B9B>!"
+# Text that the player will see if they don't have permissions
+no-permissions-message: "<#636363>[<gradient:#FB0000:#FD3F3F><b>RTP</b></gradient><#636363>] <#9B9B9B>You don't have permissions to this command!"
+# Text that the player will see after teleportation
+player-teleported-message: "<#636363>[<gradient:#FB0000:#FD3F3F><b>RTP</b></gradient><#636363>] <#9B9B9B>You have been teleported to <#FB0000>%x%<#9B9B9B>, <#FB0000>%z%<#9B9B9B>!"
+
+# Gui Settings
+#
+# If you want to get gradient text in the gui/items use https://www.birdflop.com/resources/rgb/
+# Just copy your text and paste it between the quotation marks
+# Example: gui_name: "&#fb0000t&#fb1500e&#fc2a00s&#fc3f00t &#fd5400m&#fd6a00e&#fd7f00s&#fe9400s&#fea900a&#ffbe00g&#ffd300e"
+#
+# The size of the gui, the number you enter is the number of rows the gui will display
+gui_size_value: 3
+# Gui name
+gui_name: "&#fb0000&lR&#fb0c0c&la&#fc1717&ln&#fc2323&ld&#fc2e2e&lo&#fc3a3a&lm&#fd4545&lT&#fd5151&lP"
+# The material with which the gui will be filled in empty places (If you don't want to fill it, use "AIR")
+empty_item: "GRAY_STAINED_GLASS_PANE"
+# The name of the material that is used to fill in the empty fields (Name: " " means, the material will don't have any name)
+empty_item_name: " "
+
+# Gui Items Settings
+# To add an item to the gui, you first have to declare it here as you can see in the example
+# id: this is the name by which you will refer to a given item in the gui and its settings
+# type: name of the block/item you will use
+# amount: amount of block/item
+gui_items:
+  - {id: "teleport1", type: "LIME_WOOL", amount: 1}
+  - {id: "teleport2", type: "YELLOW_WOOL", amount: 1}
+  - {id: "teleport3", type: "RED_WOOL", amount: 1}
+
+# Items Settings
+# Here are the main settings for each item, use it as in the example
+
+# WARNING! Remember that this section must match what you entered in Gui Items Settings,
+# otherwise the plugin will not work well!
+
+# first refer to the id (name) of the item you want to modify
+# x: here I define the maximum range of random tp in position X
+# x min;max
+# z: here I define the maximum range of random tp in position Z
+# z min;max
+# name: The name of the item/block you defined above
+# lores: lines that are displayed under the item/block name
+# place_in_gui: reserved slot for item/block in the gui
+# Remember that the slot numbering is shifted back by 1, i.e. slot #1 will be defined as 0, slot #2 will be defined as 1, etc.
+# permissions: define the name of the permission that a player must have to use this type of RTP
+# recommended naming is "rtp.[name]"
+# enchants: Here you can define enchants and their levels,
+# if you want the enchant not to be on your item/block, leave this field like this " "
+#
+teleport1:
+  x: "-100;100"
+  z: "-100;100"
+  name: "&#36ff00&lB&#2eff10&la&#27ff21&ls&#1fff31&li&#17ff41&lc &#0fff51&lR&#08ff62&lT&#00ff72&lP"
+  lores:
+    - "&#9c9c9cM&#989898a&#949494x &#8f8f8fr&#8b8b8ba&#878787n&#838383g&#7e7e7ee&#7a7a7a: &#ff0000&l1&#ff0909&l0&#ff1111&l0 &#ff1a1a&lB&#ff2323&ll&#ff2b2b&lo&#ff3434&lc&#ff3c3c&lk&#ff4545&ls"
+    - "&#9c9c9cR&#999999o&#959595l&#929292e &#8e8e8en&#8b8b8be&#888888e&#848484d&#818181e&#7d7d7dd&#7a7a7a: &#00ffdd&lP&#00e4e4&ll&#00c9eb&la&#00aef1&ly&#0093f8&le&#0078ff&lr"
+  place_in_gui: 11
+  permissions: "rtp.basic"
+  enchants:
+    - "DURABILITY 10"
+
+teleport2:
+  x: "-300;300"
+  z: "-300;300"
+  name: "&#ffd300&lV&#fcdc00&lI&#f8e500&lP &#f5ed00&lR&#f1f600&lT&#eeff00&lP"
+  lores:
+    - "&#9c9c9cM&#989898a&#949494x &#8f8f8fr&#8b8b8ba&#878787n&#838383g&#7e7e7ee&#7a7a7a: &#ff0000&l3&#ff0909&l0&#ff1111&l0 &#ff1a1a&lB&#ff2323&ll&#ff2b2b&lo&#ff3434&lc&#ff3c3c&lk&#ff4545&ls"
+    - "&#9c9c9cR&#999999o&#959595l&#929292e &#8e8e8en&#8b8b8be&#888888e&#848484d&#818181e&#7d7d7dd&#7a7a7a: &#ffd300&lV&#ffe525&lI&#fff64a&lP"
+  place_in_gui: 13
+  permissions: "rtp.vip"
+  enchants:
+    - "DURABILITY 10"
+
+teleport3:
+  x: "-500;500"
+  z: "-500;500"
+  name: "&#ff0000&lM&#ff1100&lV&#ff2300&lI&#ff3400&lP &#ff4500&lR&#ff5700&lT&#ff6800&lP"
+  lores:
+    - "&#9c9c9cM&#989898a&#949494x &#8f8f8fr&#8b8b8ba&#878787n&#838383g&#7e7e7ee&#7a7a7a: &#ff0000&l5&#ff0909&l0&#ff1111&l0 &#ff1a1a&lB&#ff2323&ll&#ff2b2b&lo&#ff3434&lc&#ff3c3c&lk&#ff4545&ls"
+    - "&#9c9c9cR&#999999o&#959595l&#929292e &#8e8e8en&#8b8b8be&#888888e&#848484d&#818181e&#7d7d7dd&#7a7a7a: &#d902ff&lM&#e601d9&lV&#f201b3&lI&#ff008d&lP"
+  place_in_gui: 15
+  permissions: "rtp.mvip"
+  enchants:
+    - "DURABILITY 10"
